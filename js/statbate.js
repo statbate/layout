@@ -8,8 +8,8 @@ window.addEventListener("resize", function() {
 	}
 });
 
-function choose(el) {
-	if($(".icon-menu").hasClass("_active")) {
+function choose() {
+	if(mobile) {
 		$(".icon-menu").removeClass("_active");
 		$(".header_mobile_nav").hide();
 		mobile = false;
