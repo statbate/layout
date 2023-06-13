@@ -161,6 +161,7 @@ width: 100%;
 	border-radius: 8px;
 	margin-top: 12px;
 	text-align: center;
+	overflow: hidden;
 }
 
 .header_mobile_nav a {
@@ -169,6 +170,19 @@ width: 100%;
 	font-weight: bold;
 	color: rgba(0, 0, 0, 0.5);
 	text-decoration: none;
+}
+
+
+.color_first {
+   background-color: #dfdfdf;
+}
+
+.color_second {
+   background-color: #f3f3f5;
+}
+
+.color_active {
+   background-color: red;
 }
 
 @media (max-width: 805px) {
