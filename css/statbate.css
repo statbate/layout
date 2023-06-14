@@ -69,6 +69,46 @@ body {
 	padding: 12px;
 }
 
+.content_info {
+    border-bottom: 1px solid #dee2e6;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    display: flex;
+    grid-gap: 12px;
+}
+
+.online {
+	width: 465px;
+    padding: 4px;
+    background: #efefef;
+	border-radius: 4px;
+    border: 1px solid #dee2e6;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12), 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+}
+
+.table_online {
+	width: 100%;
+    background: white;
+    text-align: center;
+    border-spacing: 0;
+    border-collapse: separate;
+    border: 1px solid #dee2e6;
+    border-radius: 6px;
+}
+
+.table_online td {
+	padding: 5px 0;
+	border-bottom: 1px solid #dee2e6;
+	border-right: 1px solid #dee2e6;
+}
+
+.table_online tr:last-child td {
+	border-bottom: none;
+}
+.table_online td:last-child {
+	border-right: none;
+}
+
 .income_chart {
 	height: 180px;
 	border-bottom: 1px solid #dee2e6;
@@ -172,6 +212,11 @@ body {
 .dropdown-menu.show {
     width: 100%;
     text-align: center;
+}
+
+.tab-content {
+    margin-top: 12px;
+    position: relative;
 }
 
 .footer {
@@ -288,6 +333,30 @@ body {
 
 .color_active {
    background-color: red;
+}
+
+table.dataTable tbody th,
+table.dataTable tbody td {
+  padding: 6px 12px;
+}
+
+table.dataTable {
+  margin-top: 10px !important;
+}
+
+.table.dataTable {
+  border-radius: 4px;
+  border-collapse: inherit !important;
+  border: 1px solid #dee2e6;
+  white-space: normal;
+  text-align: center;
+  border-right-width: 1px !important;
+  border-spacing: 0;
+}
+
+.table > :not(:last-child) > :last-child > * {
+  border-bottom-color: #dee2e6 !important;
+  text-align: center;
 }
 
 @media (max-width: 805px) {
