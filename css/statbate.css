@@ -170,8 +170,8 @@ body {
 }
 
 .dropdown-menu.show {
-    transform: translate3d(0px, 38px, 0px);
-    inset: 0px auto auto 0px;
+    width: 100%;
+    text-align: center;
 }
 
 .footer {
