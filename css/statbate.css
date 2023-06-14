@@ -142,6 +142,38 @@ body {
 	border-bottom: none;
 }
 
+.content_nav {
+	padding-top: 12px;
+}
+
+.nav-tabs .nav-link {
+	color: black;
+}
+
+.nav-link {
+	padding: 0.5rem 0.9rem;
+}
+
+.dropdown-toggle {
+    width: 100%;
+}
+
+.btn-dark {
+  background-color: #343a40;
+  border-color: #343a40;
+}
+
+.dropdown-item.active, .dropdown-item:active {
+    color: black;
+    text-decoration: none;
+    background-color: transparent; 
+}
+
+.dropdown-menu.show {
+    transform: translate3d(0px, 38px, 0px);
+    inset: 0px auto auto 0px;
+}
+
 .footer {
 	margin-top: 12px;
 }
@@ -179,6 +211,7 @@ body {
 	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12), 0 1px 3px 0 rgba(0, 0, 0, 0.2);
 	opacity: 0.5;
 }
+.content_nav_mobile,
 .header_mobile_nav,
 .header_mobile {
 	display: none;
@@ -259,6 +292,7 @@ body {
 
 @media (max-width: 805px) {
 	.income_chart,
+	.content_nav,
 	.header {
 		display: none;
 	}
@@ -266,6 +300,10 @@ body {
 		width: 100%; 
 		background-color: #eae8d4;
 		border-radius: 8px;
+		display: block;
+	}
+	
+	.content_nav_mobile {
 		display: block;
 	}
 	.content_center {

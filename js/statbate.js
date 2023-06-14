@@ -66,8 +66,6 @@ function printWsText(text) {
 
 	message = text;
 	
-	console.log(mobile);
-	
 	if(window.innerWidth > 805){
 		message = '[' + time + '] ' + message;
 	}

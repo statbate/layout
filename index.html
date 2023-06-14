@@ -92,6 +92,67 @@
 					</table>
 				</div>
 			</div>
+			<div class="content_nav">
+				<ul class="nav nav-tabs justify-content-center" id="nav-tab" role="tablist">
+					<li class="nav-item">
+						<button class="nav-link active" id="cams-tab" data-bs-toggle="tab" role="tab" data-bs-target="#cams" aria-controls="cams" aria-selected="true">Rooms</button>
+					</li>
+					<li class="nav-item">
+						<button class="nav-link" id="dons-tab" data-bs-toggle="tab" role="tab" data-bs-target="#dons" aria-controls="dons" aria-selected="false">Donators</button>
+					</li>
+					<li class="nav-item">
+						<button class="nav-link" id="boys-tab" data-bs-toggle="tab" role="tab" data-bs-target="#boys" aria-controls="boys" aria-selected="false">Boys</button>
+					</li>
+					<li class="nav-item">
+						<button class="nav-link" id="trans-tab" data-bs-toggle="tab" role="tab" data-bs-target="#trans" aria-controls="trans" aria-selected="false">Trans</button>
+					</li>
+					<li class="nav-item">
+						<button class="nav-link" id="couple-tab" data-bs-toggle="tab" role="tab" data-bs-target="#couple" aria-controls="couple" aria-selected="false">Couple</button>
+					</li>
+					<li class="nav-item">
+						<button class="nav-link" id="incomeCharts-tab" data-bs-toggle="tab" role="tab" data-bs-target="#incomeCharts" aria-controls="incomeCharts" aria-selected="false">Income</button>
+					</li>
+					<li class="nav-item">
+						<button class="nav-link" id="roomsCharts-tab" aria-invalid="roomsCharts" data-bs-toggle="tab" role="tab" data-bs-target="#roomsCharts" aria-controls="roomsCharts" aria-selected="false">Streamers</button>
+					</li>
+					<li class="nav-item">
+						<button class="nav-link" id="viewersCharts-tab" data-bs-toggle="tab" role="tab" data-bs-target="#viewersCharts" aria-controls="viewersCharts" aria-selected="false">Viewers</button>
+					</li>
+					<li class="nav-item">
+						<button class="nav-link" id="heatmap-tab" data-bs-toggle="tab" role="tab" data-bs-target="#heatmap" aria-controls="heatmap" aria-selected="false">Heat map</button>
+					</li>
+				</ul>
+			</div>
+			
+			<div class="content_nav_mobile">
+				<div class="dropdown select-tab">
+					<button class="col btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						Rooms
+					</button>
+					<div class="dropdown-menu nav nav-tabs collapse" aria-labelledby="dropdownMenuButton">
+						<a class="dropdown-item" href="#cams" data-bs-toggle="tab" role="tab" aria-controls="cams" aria-selected="false">Rooms</a>
+						<a class="dropdown-item" href="#dons" data-bs-toggle="tab" role="tab" aria-controls="dons" aria-selected="false">Donators</a>
+						<a class="dropdown-item" href="#boys" data-bs-toggle="tab" role="tab" aria-controls="boys" aria-selected="false">Boys</a>
+						<a class="dropdown-item" href="#trans" data-bs-toggle="tab" role="tab" aria-controls="trans" aria-selected="false">Trans</a>
+						<a class="dropdown-item" href="#couple" data-bs-toggle="tab" role="tab" aria-controls="couple" aria-selected="false">Couple</a>
+						<a class="dropdown-item" href="#incomeCharts" data-bs-toggle="tab" role="tab" aria-controls="incomeCharts" aria-selected="false">Income</a>
+						<a class="dropdown-item" href="#roomsCharts" data-bs-toggle="tab" role="tab" aria-controls="roomsCharts" aria-selected="false">Streamers</a>
+						<a class="dropdown-item" href="#viewersCharts" data-bs-toggle="tab" role="tab" aria-controls="viewers-charts" aria-selected="false">Viewers</a>
+						<a class="dropdown-item" href="#heatmap" data-bs-toggle="tab" role="tab" aria-controls="heatmap" aria-selected="false">Heat map</a>
+					</div>
+				</div>
+			</div>
+			
+			<div class="tab-content">
+				<div aria-labelledby="cams-tab" role="tabpanel active" class="tab-pane fade active show" id="cams">
+					Rooms 
+				</div>
+				<div aria-labelledby="dons-tab" role="tabpanel" class="tab-pane fade" id="dons">
+					Dons
+				</div>				
+			</div>
+			
+			
 		</div>
 		<!-- content end -->
 		
@@ -123,7 +184,7 @@
 	<script src="./js/jquery-3.7.0.min.js"></script>
 	<script src="./js/d3.min.js"></script>
 	<script src="./js/metricsgraphics.min.js"></script>
-	<script src="./js/bootstrap.min.js"></script>
+	<script src="./js/bootstrap.bundle.min.js"></script>
 	<script src="./js/simplebar.js"></script>
 	<script src="./js/statbate.js"></script>
 	
