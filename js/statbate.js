@@ -54,4 +54,91 @@ function showStat() {
 		area: [false, true, false],
 	});
 }
+
+function printWsText(text) {
+	if ($('.wstext').length == 0 || text.length == 0) {
+		return;
+	}
+	date = new Date();
+	xMin = (date.getUTCMinutes() < 10 ? '0' : '') + date.getUTCMinutes()
+	xSec = (date.getUTCSeconds() < 10 ? '0' : '') + date.getUTCSeconds()
+	time = date.getUTCHours() + ":" + xMin + ":" + xSec;
+
+	message = text;
+	
+	console.log(mobile);
+	
+	if(window.innerWidth > 805){
+		message = '[' + time + '] ' + message;
+	}
+	
+	message = '<div class="message">' + message + '</div>'
+
+	if(msgs.arr.length > 64) {
+		msgs.arr.pop()
+	}
+	msgs.arr.unshift(message)
+	document.querySelector('.wstext').innerHTML = msgs.arr.join('');
+}
+
+function statbate() {
+	var ws = new WebSocket("wss://statbate.com/ws/");
+	
+	ws.onopen = function () {
+		printWsText('Socket is open. Here is the log of big tips.');
+		console.log('websocket open');
+		ws.send("chaturbate");
+	};
+	
+	window.onbeforeunload = function() {
+		ws.onclose = function () {}; // disable onclose handler first
+		ws.close(1000);
+	};
+  
+	ws.onclose = function (e) {
+		printWsText('Socket is closed. Reconnect will be attempted in 1 second.');
+		console.log('Socket is closed. Reconnect will be attempted in 1 second.', e.code);
+		setTimeout(function () {
+			statbate();
+		}, 1000);
+		return;
+	};
+	
+	ws.onmessage = function (e) {
+		if(e.data == "ping") {
+			ws.send("pong");
+			return;
+		}
+		j = JSON.parse(e.data);
+		if (j.count) {
+			$(".trackCount").text("track " + j.count + " rooms");
+			return;
+		}
+		if(typeof chartActivity !== "undefined" && chartActivity && j.index){
+			point = chartActivity.series[0].points[0];
+			if(j.index < 10)
+				point.update(parseFloat(j.index.toFixed(2)));
+			else
+				point.update(Math.round(j.index));
+			return;
+		}
+		if(j.donator){
+			text = "<a href='/l/" + j.donator + "' rel='nofollow' target='_blank'>" + j.donator + "</a> send " + j.amount + " tokens to <a href='/l/" + j.room + "' rel='nofollow' target='_blank'>" + j.room + "</a>";
+			if (j.amount > 499) {
+				text = '<font color="#ae8d0b"><b>' + text + '</b></font>';
+			}
+			printWsText(text);
+			return;
+		}
+	};
+}
+
+msgs = {
+	arr: [],
+}
+
+statbate();
 showStat();
+
+console.log('Debug https://statbate.com/debug.php');
+console.log('Statbate is open source project (https://github.com/statbate)');
