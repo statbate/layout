@@ -16,7 +16,7 @@ body {
 }
 
 .header_menu {
-width: 100%; 
+	width: 100%; 
     display: flex;
     padding: 0.5rem 1rem;
     align-items: center;
@@ -65,8 +65,13 @@ width: 100%;
 .content {
 	margin-top: 12px;
 	background: #fff;
-	height: 250px;
 	border-radius: 8px;
+	padding: 12px;
+}
+
+.income_chart {
+	height: 180px;
+	border-bottom: 1px solid #dee2e6;
 }
 
 .footer {
@@ -186,6 +191,7 @@ width: 100%;
 }
 
 @media (max-width: 805px) {
+	.income_chart,
 	.header {
 		display: none;
 	}
