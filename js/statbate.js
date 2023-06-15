@@ -160,7 +160,17 @@ function statbate() {
 }
 
 function createTables(){
-	tables["main"] = $('#main').DataTable({...dataTableOptions,});
+	tables["main"] = $('#main').DataTable({
+		...dataTableOptions,
+		aoColumns: [
+			{ "orderable": false, "searchable": false, "sWidth": "5%" },
+			{ "orderable": false, "sWidth": "35%" },
+			{ "orderable": false,  "sWidth": "15%" },
+			{ "searchable": false, "sWidth": "15%" },
+			{ "searchable": false, "sWidth": "15%" },
+			{ "searchable": false, "sWidth": "15%" },
+		],	
+	});
 	tables["main"]["status"] = "mobile";
 	if(window.innerWidth > 805){
 		tables["main"]["status"] = "desktop";
