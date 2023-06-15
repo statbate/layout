@@ -1,5 +1,6 @@
 var mobile = false;
 var income_chart = false;
+var tables = [];
 
 window.addEventListener("resize", function() {
 	if(window.innerWidth > 805){
@@ -11,7 +12,34 @@ window.addEventListener("resize", function() {
 		if(!income_chart){
 			showStat();
 		}
+		if(tables["main"]["status"] == "mobile"){
+			tables["main"]["status"] = "desktop";
+			tables["main"].page.len(10).draw();
+		}
+		return;
 	}
+	if(tables["main"]["status"] == "desktop"){
+		tables["main"]["status"] = "mobile";
+		tables["main"].page.len(100).draw();
+	}
+});
+
+var dataTableOptions = {
+	bAutoWidth: false,
+	oLanguage: {
+		sLengthMenu: "Show _MENU_ entries",
+		sSearch: "",
+		sSearchPlaceholder: "Search",
+	},
+	pagingType: 'simple_numbers', // or numbers
+	iDisplayLength: 10,
+	order: [[5, "desc"]],
+};
+
+$('.dropdown-menu').on( 'click', 'a', function() {
+	text = $(this).html();
+	htmlText = text + ' <span class="caret"></span>';
+	$(this).closest('.dropdown').find('.dropdown-toggle').html(htmlText);
 });
 
 function choose() {
@@ -131,12 +159,25 @@ function statbate() {
 	};
 }
 
-msgs = {
-	arr: [],
+function createTables(){
+	tables["main"] = $('#main').DataTable({...dataTableOptions,});
+	tables["main"]["status"] = "mobile";
+	if(window.innerWidth > 805){
+		tables["main"]["status"] = "desktop";
+	}
 }
+
+msgs = {arr: [],};
+
+
+//oTable.page.len(100).draw();
 
 statbate();
 showStat();
 
 console.log('Debug https://statbate.com/debug.php');
 console.log('Statbate is open source project (https://github.com/statbate)');
+
+$(document).ready(function () {
+	createTables();
+});

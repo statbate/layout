@@ -360,6 +360,9 @@ table.dataTable {
 }
 
 @media (max-width: 805px) {
+	.dataTables_paginate,
+	.dataTables_info,
+	.dataTables_length,
 	.income_chart,
 	.content_nav,
 	.header {
@@ -381,6 +384,21 @@ table.dataTable {
 	}
 	.content_wslog,
 	.content_table {
+		width: 100%;
+	}
+	
+	.dataTables_filter label {
+		display: block !important;
+	}
+	
+	.form-control-sm[type=search] {
+		width: 100% !important;
+	}
+	
+	div.dataTables_wrapper div.dataTables_filter input {
+		margin-left: 0 !important;
+	}
+	.col-md-6 {
 		width: 100%;
 	}
 }
