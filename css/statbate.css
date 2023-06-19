@@ -7,7 +7,6 @@ a,
 a:hover,
 a:active {
 	color: #333;
-	word-break: break-word;
 }
 
 .statbate {
@@ -436,6 +435,31 @@ a {
 
 .table>:not(:first-child) {
     border-top: 0 !important;
+}
+
+.mg-main-line.mg-line1 {
+  stroke: green;
+}
+
+.mg-main-line.mg-line2 {
+  stroke: #25639a;
+}
+
+.mg-main-line.mg-line3 {
+  stroke: brown;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.header_track:hover,
+.page-link:hover {
+  text-decoration: none;
+}
+
+input[type="search"]::-webkit-search-cancel-button {
+    -webkit-appearance: searchfield-cancel-button;
 }
 
 @media (max-width: 805px) {

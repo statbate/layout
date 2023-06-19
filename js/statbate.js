@@ -65,9 +65,6 @@ $(document).on("click", "[data-modal-info]", function (e) {
 
 		if (data.chart.length != 0) {
 			xx11 = JSON.parse(data.chart);
-			//if(xx11.length > 28){
-			//	xx11.pop();
-			//}
 			var xx22 = MG.convert.date(xx11, 'date');
 			MG.data_graphic({
 				data: xx22,
@@ -81,7 +78,6 @@ $(document).on("click", "[data-modal-info]", function (e) {
 				target: document.getElementById('modelChart'),
 				x_accessor: 'date',
 				y_accessor: 'value',
-				//color: ['#25639a'],
 				x_axis: false,
 			});
 		}
@@ -236,4 +232,5 @@ console.log('Statbate is open source project (https://github.com/statbate)');
 
 $(document).ready(function () {
 	createTables();
+	$('[data-toggle="tooltip"]').tooltip();
 });
