@@ -12,29 +12,19 @@ window.addEventListener("resize", function() {
 			$(".icon-menu").removeClass("_active");
 			$(".header_mobile_nav").hide();
 		}
-		if(tables["main"]["status"] == "mobile"){
-			tables["main"]["status"] = "desktop";
-			tables["main"].page.len(10).draw();
-		}
-		return;
 	}
-	if(tables["main"]["status"] == "desktop"){
-		tables["main"]["status"] = "mobile";
-		tables["main"].page.len(100).draw();
+	for (const [key] of Object.entries(tables)) {
+		if(window.innerWidth > 805 && tables[key]["status"] == "mobile"){
+			tables[key]["status"] = "desktop";
+			tables[key].page.len(10).draw();
+		}
+		
+		if(window.innerWidth < 805 && tables[key]["status"] == "desktop"){
+			tables[key]["status"] = "mobile";
+			tables[key].page.len(100).draw();
+		}
 	}
 });
-
-var dataTableOptions = {
-	bAutoWidth: false,
-	oLanguage: {
-		sLengthMenu: "Show _MENU_ entries",
-		sSearch: "",
-		sSearchPlaceholder: "Search",
-	},
-	pagingType: 'simple_numbers', // or numbers
-	iDisplayLength: 10,
-	order: [[5, "desc"]],
-};
 
 $('.dropdown-menu').on( 'click', 'a', function() {
 	text = $(this).html();
@@ -202,27 +192,34 @@ function statbate() {
 }
 
 function createTables(){
-	tables["main"] = $('#main').DataTable({
-		...dataTableOptions,
-		aoColumns: [
-			{ "orderable": false, "searchable": false, "sWidth": "5%" },
-			{ "orderable": false, "sWidth": "35%" },
-			{ "orderable": false,  "sWidth": "15%" },
-			{ "searchable": false, "sWidth": "15%" },
-			{ "searchable": false, "sWidth": "15%" },
-			{ "searchable": false, "sWidth": "15%" },
-		],	
-	});
-	tables["main"]["status"] = "mobile";
-	if(window.innerWidth > 805){
-		tables["main"]["status"] = "desktop";
+	dataTableOptions = {
+		bAutoWidth: false,
+		oLanguage: {
+			sLengthMenu: "Show _MENU_ entries",
+			sSearch: "",
+			sSearchPlaceholder: "Search",
+		},
+		pagingType: 'simple_numbers', // or numbers
+		iDisplayLength: 10,
+		order: [[5, "desc"]],
+	};
+	aoColumns = [
+		{ "orderable": false, "searchable": false, "sWidth": "5%" },
+		{ "orderable": false, "sWidth": "35%" },
+		{ "orderable": false, "sWidth": "15%" },
+		{ "searchable": false, "sWidth": "15%" },
+		{ "searchable": false, "sWidth": "15%" },
+		{ "searchable": false, "sWidth": "15%" },
+	];
+	tables["main"] = $('#main').DataTable({...dataTableOptions, aoColumns: aoColumns,});
+	aoColumns[2]["searchable"] = false;
+	tables["top100dons"] = $("#top100dons").DataTable({...dataTableOptions, aoColumns: aoColumns,});
+	for (const [key] of Object.entries(tables)) {
+		tables[key]["status"] = (window.innerWidth > 805) ? "desktop" : "mobile";
 	}
 }
 
 msgs = {arr: [],};
-
-
-//oTable.page.len(100).draw();
 
 statbate();
 showStat();
