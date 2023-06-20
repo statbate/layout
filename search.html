@@ -62,48 +62,7 @@
 			
 			
 	
-			<div class="content_info">
-				
-				<div class="online">
-					<table class="table_online">
-						<tbody>
-							<tr>
-								<td>Online more</td>
-								<td>10</td>
-								<td>25</td>
-								<td>50</td>
-								<td>100</td>
-							</tr>
-							<tr>
-								<td>Rooms</td>
-								<td>3088</td>
-								<td>1422</td>
-								<td>774</td>
-								<td>426</td>
-							</tr>
-							<tr>
-								<td>Total rooms</td>
-								<td colspan="4">9800</td>
-							</tr>
-							<tr>
-								<td>Total online</td>
-								<td colspan="4">320873</td>
-							</tr>
-
-						</tbody>
-					</table>
-				</div>
-				
-				<div class="content_activity">
-					
-					<figure class="highcharts-figure">
-							<div id="container-activity" class="chart-container"></div>
-					</figure>
-					
-				</div>
-				
-				
-			</div>
+			test
 			
 
 			
@@ -141,109 +100,7 @@
 	<script src="./js/bootstrap.bundle.min.js"></script>
 	<script src="./js/dataTables.bootstrap5.min.js"></script>
 	<script src="./js/highcharts.js"></script>
-	<script src="./js/highcharts-more.js"></script>
-	<script src="./js/solid-gauge.js"></script>
 	<script src="./js/simplebar.js"></script>
 	<script src="./js/statbate.js"></script>
-	<script>
-		// Solid gauge
-		var gaugeOptions = {
-			chart: {
-				type: 'solidgauge'
-			},
-
-			title: null,
-				
-			accessibility: {
-				enabled: false
-			},
-
-			pane: {
-				center: ['50%', '85%'],
-				size: '140%',
-				startAngle: -90,
-				endAngle: 90,
-				background: {
-					backgroundColor:
-						Highcharts.defaultOptions.legend.backgroundColor || '#EEE',
-					innerRadius: '60%',
-					outerRadius: '100%',
-					shape: 'arc'
-				}
-			},
-
-			exporting: {
-				enabled: false
-			},
-
-			tooltip: {
-				enabled: false
-			},
-
-			// the value axis
-			yAxis: {
-				stops: [
-					[0.1, '#55BF3B'], // green
-					[0.5, '#DDDF0D'], // yellow
-					[0.9, '#DF5353'] // red
-				],
-				lineWidth: 0,
-				tickWidth: 0,
-				minorTickInterval: null,
-				tickAmount: 2,
-				title: {
-					y: -45
-				},
-				labels: {
-					y: 16
-				}
-			},
-
-			plotOptions: {
-				solidgauge: {
-					dataLabels: {
-						y: 5,
-						borderWidth: 0,
-						useHTML: true
-					}
-				}
-			}
-		};
-		
-		// The speed gauge
-		var chartActivity = Highcharts.chart('container-activity', Highcharts.merge(gaugeOptions, {
-			yAxis: {
-				min: 0,
-				max: 60,
-				title: {
-					text: 'Income per hour'
-				}
-			},
-			
-			chart: {
-				height: 123,
-				backgroundColor: '#f3f3f5',
-			},
-
-			credits: {
-				enabled: false
-			},
-
-			series: [{
-				name: 'Activity',
-				data: [24],
-				dataLabels: {
-					format:
-						'<div style="text-align:center">' +
-						'<span style="font-size:25px">{y}</span><span style="opacity:0.4">k</span><br/>' +
-						'<span style="font-size:12px;opacity:0.4"> usd/h</span>' +
-						'</div>'
-				},
-				tooltip: {
-					valueSuffix: 'usd/h'
-				}
-			}]
-		}));
-	</script>
 	</body>
 </html>
