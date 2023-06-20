@@ -15,6 +15,9 @@
 		<link rel="stylesheet" href="./css/dataTables.bootstrap5.min.css" >
 		<link rel="stylesheet" href="./css/simplebar.css" >
 		<link rel="stylesheet" href="./css/statbate.css">
+		<script>
+			var page = "list";
+		</script>
 	</head>
 	
 	<body>
@@ -59,9 +62,6 @@
 		<!-- content start -->
 		<div class="content">
 			
-			
-			
-	
 			<div class="content_info">
 				
 				<div class="online">
@@ -95,18 +95,55 @@
 				</div>
 				
 				<div class="content_activity">
-					
 					<figure class="highcharts-figure">
 							<div id="container-activity" class="chart-container"></div>
 					</figure>
-					
 				</div>
-				
-				
+			
 			</div>
 			
-
-			
+			<div class="tab-content">
+					<div class="promo-block">
+						<a href="https://www.getmonero.org" target="_blank"><img src="./img/xmr.webp" width="380" height="31"></a>
+					</div>
+				
+				<!-- test data start -->
+					<table id="list1" class="table table-striped table-bordered dataTable no-footer" cellspacing="0">
+						<thead>
+							<tr>
+								<th class="d-none d-md-table-cell"></th>
+								<th data-toggle="tooltip">room</th>
+								<th data-toggle="tooltip" title="Stream duration in minutes" class="d-none d-sm-table-cell">time</th>
+								<th data-toggle="tooltip" title="Income per hour">hour</th>
+								<th data-toggle="tooltip" title="Average tip" class="d-none d-sm-table-cell">avg</th>
+								<th data-toggle="tooltip" title="Uniq donators" class="d-none d-md-table-cell">dons</th>
+								<th data-toggle="tooltip" title="Income per stream">USD</th>
+							</tr>
+						</thead>
+						<tbody>
+						<tr class="odd">
+							<td class="d-none d-md-table-cell"><a href="https://statbate.com/public/log.php?name=sandra_buika&amp;base=chaturbate" target="_blank">1</a></td>
+							<td><a href="https://statbate.com/search.php?name=sandra_buika&amp;db=1" target="_blank">sandra_buika</a></td>
+							<td class="d-none d-sm-table-cell">406</td>
+							<td>372</td>
+							<td class="d-none d-sm-table-cell">3.3</td>
+							<td class="d-none d-md-table-cell">254</td>
+							<td>2511</td>
+						</tr>
+						<tr class="even">
+							<td class="d-none d-md-table-cell"><a href="https://statbate.com/public/log.php?name=cutie_have_beauty_booty&amp;base=chaturbate" target="_blank">2</a></td>
+							<td><a href="https://statbate.com/search.php?name=cutie_have_beauty_booty&amp;db=1" target="_blank">cutie_have_beauty_booty</a></td>
+							<td class="d-none d-sm-table-cell">306</td>
+							<td>287</td>
+							<td class="d-none d-sm-table-cell">2.44</td>
+							<td class="d-none d-md-table-cell">63</td>
+							<td>1459</td>
+						</tr>
+						</tbody>
+					</table>
+					<!-- test data end -->
+				
+				</div>
 
 		</div>
 		<!-- content end -->

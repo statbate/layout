@@ -83,6 +83,7 @@ a:active {
 
 .content_activity {
 	flex: 1;
+	min-width: 272px;
     min-height: 123px;
     position: relative;
     border-radius: 4px;
@@ -92,7 +93,7 @@ a:active {
 }
 
 .online {
-	min-width: 465px;
+	width: 100%;
     padding: 4px;
     background: #efefef;
 	border-radius: 4px;
@@ -538,7 +539,7 @@ input[type="search"]::-webkit-search-cancel-button {
 @media (max-width: 690px) {
 
 	.content_info {
-		flex-direction: column-reverse;
+		flex-direction: column;
 	}
 
 	.content_center {

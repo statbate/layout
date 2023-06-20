@@ -88,7 +88,7 @@ function choose() {
 }
 
 function showStat() {
-	if($('.income_chart').css('display') == 'none'){
+	if($('.income_chart').css('display') == 'none' || page != "main"){
 		return;
 	}
 	income_chart = $('.income_chart').width();
@@ -211,9 +211,20 @@ function createTables(){
 		{ "searchable": false, "sWidth": "15%" },
 		{ "searchable": false, "sWidth": "15%" },
 	];
+	
 	tables["main"] = $('#main').DataTable({...dataTableOptions, aoColumns: aoColumns,});
 	aoColumns[2]["searchable"] = false;
 	tables["top100dons"] = $("#top100dons").DataTable({...dataTableOptions, aoColumns: aoColumns,});
+	
+	dataTableOptions.order = [[6, "desc"]];
+	aoColumns[1]["sWidth"] = "36%";
+	aoColumns[2]["sWidth"] = "11%";
+	aoColumns[3]["sWidth"] = "11%";
+	aoColumns[4]["sWidth"] = "11%";
+	aoColumns[5]["sWidth"] = "11%";
+	aoColumns[6] = { "searchable": false, "sWidth": "15%" };	
+	tables["list1"] = $("#list1").DataTable({...dataTableOptions, aoColumns: aoColumns,});
+	
 	for (const [key] of Object.entries(tables)) {
 		tables[key]["status"] = (window.innerWidth > 805) ? "desktop" : "mobile";
 	}
